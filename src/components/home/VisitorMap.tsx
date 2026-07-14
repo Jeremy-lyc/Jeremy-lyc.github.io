@@ -28,6 +28,7 @@ const landFeature = feature(
 
 const projection = geoEqualEarth().fitSize([WIDTH, HEIGHT], { type: 'Sphere' } as never);
 const landPath = geoPath(projection)(landFeature) || '';
+const spherePath = geoPath(projection)({ type: 'Sphere' } as never) || '';
 
 function radiusForCount(count: number): number {
     return Math.min(3 + Math.log2(count + 1) * 1.6, 12);
@@ -75,7 +76,8 @@ export default function VisitorMap({ title }: VisitorMapProps) {
                     role="img"
                     aria-label="Map of approximate visitor locations"
                 >
-                    <path d={landPath} className="fill-neutral-300" />
+                    <path d={spherePath} className="fill-sky-50 dark:fill-slate-800/40" />
+                    <path d={landPath} className="fill-neutral-300 dark:fill-neutral-600" />
                     {points.map((point, index) => {
                         const projected = projection([point.lon, point.lat]);
                         if (!projected) return null;
