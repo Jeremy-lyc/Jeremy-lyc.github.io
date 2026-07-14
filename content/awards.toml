@@ -3,25 +3,7 @@ title = "Awards"
 description = "Honors and awards I have received."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2025"
-content = "Description of the award."
-
-[[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2024"
-content = "Description of the award."
-
-[[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2023"
-content = "Description of the award."
-
-[[items]]
-title = "Example Award"
-subtitle = "Organization"
-date = "2022"
-content = "Description of the award."
+title = "Provost Honors"
+subtitle = "University of California, San Diego"
+date = "2022-2026"
+content = "Similar to Dean’s List at many institutions, Provost Honors is awarded through the Colleges. Students who achieve a 3.5 or higher UC GPA in at least 12 graded units (at UC San Diego), with no grade of D, F, or NP recorded for the quarter, receive Provost Honors for the quarter."

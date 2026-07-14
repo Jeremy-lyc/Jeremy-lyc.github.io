@@ -121,6 +121,7 @@ export default function RootLayout({
   const config = getConfig();
   const runtimeI18n = getRuntimeI18nConfig(config.i18n);
   const targetLocales = runtimeI18n.enabled ? runtimeI18n.locales : [runtimeI18n.defaultLocale];
+  const analyticsDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN?.trim();
 
   const {
     navigationByLocale,
@@ -132,6 +133,13 @@ export default function RootLayout({
     <html lang={runtimeI18n.defaultLocale} className="scroll-smooth" suppressHydrationWarning>
       <head>
         <link rel="icon" href={config.site.favicon} type="image/svg+xml" />
+        {analyticsDomain && (
+          <script
+            defer
+            data-domain={analyticsDomain}
+            src="https://plausible.io/js/script.js"
+          />
+        )}
         <link rel="dns-prefetch" href="https://jialeliu.com" />
         <link rel="preconnect" href="https://jialeliu.com" crossOrigin="" />
         <link
