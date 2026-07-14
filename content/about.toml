@@ -27,3 +27,8 @@ type = "list"
 title = "News"
 source = "news.toml"
 
+[[sections]]
+id = "visitor_map"
+type = "visitormap"
+title = "Visitor Map"
+

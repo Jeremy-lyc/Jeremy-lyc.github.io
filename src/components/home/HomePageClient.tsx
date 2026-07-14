@@ -4,6 +4,7 @@ import Profile from '@/components/home/Profile';
 import About from '@/components/home/About';
 import SelectedPublications from '@/components/home/SelectedPublications';
 import News, { NewsItem } from '@/components/home/News';
+import VisitorMap from '@/components/home/VisitorMap';
 import PublicationsList from '@/components/publications/PublicationsList';
 import TextPage from '@/components/pages/TextPage';
 import CardPage from '@/components/pages/CardPage';
@@ -14,7 +15,7 @@ import { useLocaleStore } from '@/lib/stores/localeStore';
 
 interface SectionConfig {
   id: string;
-  type: 'markdown' | 'publications' | 'list';
+  type: 'markdown' | 'publications' | 'list' | 'visitormap';
   title?: string;
   source?: string;
   filter?: string;
@@ -92,6 +93,13 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
                       <News
                         key={section.id}
                         items={section.items || []}
+                        title={section.title}
+                      />
+                    );
+                  case 'visitormap':
+                    return (
+                      <VisitorMap
+                        key={section.id}
                         title={section.title}
                       />
                     );

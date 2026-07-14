@@ -26,3 +26,8 @@ id = "news"
 type = "list"
 title = "动态"
 source = "news.toml"
+
+[[sections]]
+id = "visitor_map"
+type = "visitormap"
+title = "访客地图"

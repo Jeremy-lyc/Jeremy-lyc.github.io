@@ -1,0 +1,14 @@
+name = "prism-visitor-map"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Create with: wrangler kv namespace create VISITS
+# Then paste the returned id below.
+kv_namespaces = [
+  { binding = "VISITS", id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" }
+]
+
+[vars]
+# Restrict which origin may call this worker. Set to your deployed site,
+# e.g. "https://yourusername.github.io". Use "*" only while testing locally.
+ALLOWED_ORIGIN = "*"
