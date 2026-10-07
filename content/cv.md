@@ -17,6 +17,7 @@ University of California, San Diego | Advisor: Prof. Nikolay Atanasov
 - Developing an autonomous quadrotor hardware platform for fully onboard perception, state estimation, and control by integrating NVIDIA Jetson Orin NX with flight controller, sensors, power distribution, and communication modules.
 - Designed, assembled, and configured drone hardware and embedded systems, including ESC wiring, firmware flashing, sensor calibration, and hardware-software integration.
 - Deployed model predictive control (MPC) pipelines using acados and validated high-speed trajectory tracking in simulation and real-world flight environments.
+- Built an extensible SAPIEN-based simulation testbed where any Gazebo SDF scene or ROS xacro/URDF robot can be added through automated validation and registration tooling.
 - Collaborated with lab members to troubleshoot autonomous flight pipelines, document system architecture, and improve platform reliability and reproducibility.
 
 **Research Assistant, Active & Living Matter Lab**  
