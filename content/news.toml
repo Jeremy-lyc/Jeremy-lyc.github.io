@@ -1,3 +1,15 @@
 [[news]]
+date = "2026-09"
+content = "Started my M.S. in Computer Engineering at UC San Diego."
+
+[[news]]
 date = "2026-06"
-content = "Graduated from University of California with a BSc degree in Computer Engineering 🎉"
+content = "Graduated from UC San Diego with a B.S. in Computer Engineering 🎉"
+
+[[news]]
+date = "2025-10"
+content = "Joined the [Existential Robotics Laboratory](https://erl.ucsd.edu/) to work on autonomous robots with Prof. Nikolay Atanasov."
+
+[[news]]
+date = "2024-09"
+content = "Joined the [Active & Living Matter Lab](https://www.tzerhan.com/) to build bio-inspired robot swarms with Prof. Tzer-Han Tan."

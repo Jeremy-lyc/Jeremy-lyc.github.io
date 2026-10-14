@@ -99,7 +99,19 @@ function getDefaultConfig(): SiteConfig {
     throw new Error('Failed to load content/config.toml');
   }
 
-  return parsed as SiteConfig;
+  const config = parsed as SiteConfig;
+
+  // last_updated = "auto" stamps the date of the build, so the footer never goes stale.
+  if (config.site?.last_updated === 'auto') {
+    config.site.last_updated = new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'America/Los_Angeles',
+    });
+  }
+
+  return config;
 }
 
 export function getConfig(locale?: string): SiteConfig {

@@ -6,7 +6,7 @@ import { CardPageConfig } from '@/types/page';
 
 const markdownComponents = {
     p: ({ children }: React.ComponentProps<'p'>) => <p className="mb-3 last:mb-0">{children}</p>,
-    ul: ({ children }: React.ComponentProps<'ul'>) => <ul className="list-disc list-inside mb-3 space-y-1">{children}</ul>,
+    ul: ({ children }: React.ComponentProps<'ul'>) => <ul className="list-disc pl-5 mb-3 space-y-1">{children}</ul>,
     ol: ({ children }: React.ComponentProps<'ol'>) => <ol className="list-decimal list-inside mb-3 space-y-1">{children}</ol>,
     li: ({ children }: React.ComponentProps<'li'>) => <li className="mb-1">{children}</li>,
     a: ({ ...props }) => (
@@ -54,18 +54,35 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 * index }}
-                        className={`bg-white dark:bg-neutral-900 ${embedded ? "p-4" : "p-6"} rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all duration-200 hover:scale-[1.01]`}
+                        className={`bg-white dark:bg-neutral-900 ${embedded ? "p-4" : "p-6"} rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all duration-200 hover:scale-[1.01] `}
                     >
-                        <div className="flex justify-between items-start mb-2">
+                        {item.image && (
+                            <div className="-mx-6 -mt-6 mb-5 h-56 md:h-64 overflow-hidden rounded-t-xl border-b border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-800">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    src={item.image}
+                                    alt={item.image_alt || item.title}
+                                    loading="lazy"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        )}
+                        <div className="flex-1 min-w-0">
+                        <div className="flex justify-between items-start gap-3 mb-2">
                             <h3 className={`${embedded ? "text-lg" : "text-xl"} font-semibold text-primary`}>{item.title}</h3>
                             {item.date && (
-                                <span className="text-sm text-neutral-500 font-medium bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded">
+                                <span className="text-sm text-neutral-500 font-medium bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded whitespace-nowrap">
                                     {item.date}
                                 </span>
                             )}
                         </div>
                         {item.subtitle && (
                             <p className={`${embedded ? "text-sm" : "text-base"} text-accent font-medium mb-3`}>{item.subtitle}</p>
+                        )}
+                        {item.highlight && (
+                            <p className="inline-block text-sm font-semibold text-accent bg-accent/10 px-2.5 py-1 rounded-full mb-3">
+                                {item.highlight}
+                            </p>
                         )}
                         {item.content && (
                             <div className={`${embedded ? "text-sm" : "text-base"} text-neutral-600 dark:text-neutral-500 leading-relaxed`}>
@@ -83,6 +100,17 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                                 ))}
                             </div>
                         )}
+                        {item.link && (
+                            <a
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 mt-4 text-sm font-medium text-accent hover:underline"
+                            >
+                                {item.link_label || 'View project'} &rarr;
+                            </a>
+                        )}
+                        </div>
                     </motion.div>
                 ))}
             </div>

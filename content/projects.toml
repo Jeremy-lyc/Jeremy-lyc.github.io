@@ -1,0 +1,65 @@
+type = "card"
+title = "Projects"
+description = "Selected course projects from UC San Diego. Code for course assignments is available on request."
+
+[[items]]
+title = "Real-Time GPU Particle Physics Simulation"
+subtitle = "CSE 167 · Computer Graphics · Individual project"
+date = "Fall 2025"
+content = """
+A 2D physics engine that runs entirely inside a fragment shader. Shaders keep no state between frames, so each pixel of a feedback buffer stores one particle's position and velocity, letting the simulation carry state from frame to frame.
+
+- Penalty-method collisions against walls and other particles
+- Gravity and linear damping, integrated with semi-implicit Euler
+- Click to spawn new particles in real time
+
+Also on [Shadertoy](https://www.shadertoy.com/view/tc3fz4).
+"""
+tags = ["GLSL", "Physics Simulation", "GPU", "WebGL"]
+image = "/projects/particle-sim.jpg"
+image_alt = "Glowing balls piling up under gravity in the GPU particle simulation"
+link = "/projects/particle-sim.html"
+link_label = "Try the live demo (click to drop balls)"
+
+[[items]]
+title = "Rating Prediction for Book Recommendation"
+subtitle = "CSE 158R · Recommender Systems & Web Mining"
+date = "Fall 2024"
+highlight = "🏆 Ranked 3rd of 710 students"
+content = """
+Predicted how users would rate books from a large interaction dataset, scored on a class-wide leaderboard.
+
+- SVD collaborative filtering, tuned by grid search over latent factors, learning rate, regularization, and epochs
+- Separate read-prediction model: a Random Forest trained on balanced positive/negative samples with popularity features
+"""
+tags = ["Recommender Systems", "Matrix Factorization", "Python"]
+
+[[items]]
+title = "Brain Tumor Detection from MRI"
+subtitle = "ECE 176 · Deep Learning · with Virakboth Hang"
+date = "Winter 2025"
+image = "/projects/brain-tumor-detection.jpg"
+image_alt = "MRI scans with predicted (red) and ground-truth (blue) tumor bounding boxes"
+highlight = "Test accuracy 81.9% → 94.0%"
+content = """
+Detected and localized brain tumors in MRI scans, moving step by step from a linear baseline to deep detection models.
+
+- Classification: logistic regression (81.9%) → fully connected network → ResNet-10 with batch normalization (94.0%)
+- Localization: fine-tuned Faster R-CNN (ResNet-50 + FPN) to draw bounding boxes around tumors (red = predicted, blue = ground truth)
+"""
+tags = ["PyTorch", "CNN", "Object Detection", "Medical Imaging"]
+
+[[items]]
+title = "Custom 9-bit ISA CPU"
+subtitle = "CSE 141L · Computer Architecture · Team project"
+date = "Spring 2026"
+image = "/projects/cpu-rtl.png"
+image_alt = "RTL schematic of the custom CPU"
+highlight = "All 10/10 test cases passed"
+content = """
+Designed an instruction set and processor under tight constraints: 9-bit instructions, 8-bit registers, and only 512 instruction slots.
+
+- 14-opcode ISA, a SystemVerilog CPU, and a Python assembler
+- Ran 16-bit Hamming-distance and 32-bit multiplication programs on the 8-bit datapath
+"""
+tags = ["SystemVerilog", "ISA Design", "Digital Design"]

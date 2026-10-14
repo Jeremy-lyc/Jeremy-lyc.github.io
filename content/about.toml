@@ -3,9 +3,12 @@ title = "About"
 
 [profile]
 research_interests = [
-  "Autonomous Robotics",
+  "Aerial Robotics & Onboard Autonomy",
   "Model Predictive Control",
-  "Swarm Intelligence"
+  "Motion Planning",
+  "Mapping & Perception",
+  "Swarm Robotics",
+  "Sim-to-Real Transfer"
 ]
 
 [[sections]]

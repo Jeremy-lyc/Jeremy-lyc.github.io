@@ -1,12 +1,12 @@
 [site]
 title = "Yucheng (Jeremy) Lin"
-description = "Master student at University of California, San Diego."
+description = "M.S. student in Computer Engineering at UC San Diego, working on aerial robotics, model predictive control, and swarm robotics."
 favicon = "/favicon.svg"
-last_updated = "July 8, 2026"
+last_updated = "auto"  # stamped with the build date
 
 [author]
 name = "Yucheng (Jeremy) Lin"
-title = "Master Student"
+title = "M.S. Student, Computer Engineering"
 institution = "University of California, San Diego"
 avatar = "/bio.jpg"
 
@@ -53,6 +53,12 @@ title = "About"
 type = "page"
 target = "about"
 href = "/"
+
+[[navigation]]
+title = "Projects"
+type = "page"
+target = "projects"
+href = "/projects"
 
 # Uncomment it if we have publications
 # [[navigation]]

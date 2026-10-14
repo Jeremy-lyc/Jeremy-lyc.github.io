@@ -21,7 +21,10 @@ export interface CardItem {
     content?: string;
     tags?: string[];
     link?: string;
+    link_label?: string;
     image?: string;
+    image_alt?: string;
+    highlight?: string;
 }
 
 export interface CardPageConfig extends BasePageConfig {
